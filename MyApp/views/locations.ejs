@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3><%= validate %></h3>
+    <form action="add" method="POST">
+    <input type="hidden" name="_csrf" value=<%= csrftoken %>>
+        <div>
+            <label for="FullName">Name: </label>
+            <input type="text" name="name"></input><br>
+
+            <label for="Type">City: </label>
+            <input type="text" name="city"></input><br>
+
+            <fieldset>
+              <legend>Locations</legend>
+                  <label for="Type">Type: </label>
+                  <input type="text" name="type"></input><br>
+
+                  <label for="Type">Longitude: </label>
+                  <input type="text" name="long"></input><br>
+
+                  <label for="Type">Latitude: </label>
+                  <input type="text" name="lat"></input><br>
+          </fieldset>
+                    
+            <input type="submit" value="Submit" />
+        </div>
+        </form>
+        <div style="visibility:<%= visible %>">
+          <h2>
+            <table>
+              <tr>
+                <td>Name:</td>
+                <td><%= name %></td>
+              </tr>
+              <tr>
+                <td>City:</td>
+                <td><%= city %></td>
+              </tr>
+              <tr>
+                <td>Type:</td>
+                <td><%= type %></td>
+              </tr>
+              <tr>
+                <td>Longitude:</td>
+                <td><%= long %></td>
+              </tr>
+              <tr>
+                <td>Latitude:</td>
+                <td><%= lat %></td>
+              </tr>
+            </table>
+          </h2>
+        </div>
+  </body>
+</html>

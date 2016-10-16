@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>  
+    <h3><%= validate %></h3>
+    <form action="search" method="POST">
+    <input type="hidden" name="_csrf" value=<%= csrftoken %>>
+    <fieldset>
+        <div>
+            <table>
+              <tr>
+                <td>
+                  <label for="Type">Longitude: </label>
+                </td>
+                <td>
+                  <input type="text" name="long"></input>
+                </td>
+                <td>
+                  <label for="Type">Latitude: </label>
+                </td>
+                <td>
+                  <input type="text" name="lat"></input>
+                </td>
+                <td>
+                    <input type="submit" value="Search" />
+                </td>
+              </tr>
+            </table>
+        </div>
+        </fieldset>
+    </form>
+
+        <div style="visibility:<%= visible %>">
+          <h2>
+            <table>
+              <tr>
+                <td>Name:</td>
+                <td><%= name %></td>
+              </tr>
+              <tr>
+                <td>City:</td>
+                <td><%= city %></td>
+              </tr>
+              <tr>
+                <td>Longitude:</td>
+                <td><%= long %></td>
+              </tr>
+              <tr>
+                <td>Latitude:</td>
+                <td><%= lat %></td>
+              </tr>
+            </table>
+          </h2>
+        </div>
+  </body>
+</html>
